@@ -43,7 +43,7 @@ export const questions = [
   {
     id: 5,
     type: "mc",
-    question: "Ms. Owens bought a 5-pound bag of sand. She gives 1/5 pound to each student. What is the maximum number of students?",
+    question: "Ms. Owens bought a 5-pound bag of sand for a science class. She wants to give 1/5 pound to each of her students. What is the maximum number of students that can receive 1/5 pound of sand?",
     options: ["10", "16", "25", "50"],
     answer: "25",
     explanation: "You are splitting 5 pounds into pieces of 1/5 pound. Divide 5 ÷ 1/5. Dividing by a fraction means multiply: 5 × 5 = 25."
