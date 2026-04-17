@@ -11,7 +11,7 @@ export const questions = [
   {
     id: 2,
     type: "mc",
-    question: "Brandon has 2 3/12 feet of wood. Steve has 5 6/7 feet of wood. How many feet of wood do they have altogether?",
+    question: "Brandon has 12 2/3 feet of wood. Steve has 7 5/6 feet of wood. How many feet of wood do they have altogether?",
     options: ["19 1/2", "19 3/4", "20 1/2", "20 3/4"],
     answer: "20 1/2",
     explanation: "Add the whole numbers and fractions separately. You need a common denominator to add the fractions correctly, then combine everything."
@@ -66,7 +66,7 @@ export const questions = [
   {
     id: 7,
     type: "mc",
-    question: "Mr. Barton has a piece of wood that is 1 3/4 feet long. He painted 1/2 of the length black. What length did he paint?",
+    question: "Mr. Barton has a piece of wood that is 3 1/4 feet long. He painted 1/2 of the length black. What length did he paint?",
     options: ["5/8 foot", "1 5/8 feet", "1 7/8 feet", "2 3/4 feet"],
     answer: "1 5/8 feet",
     explanation: "First change 1 3/4 to an improper fraction: 7/4. Then find half: 7/4 ÷ 2 = 7/8. Convert back to a mixed number: 1 5/8."
@@ -116,7 +116,7 @@ export const questions = [
   {
     id: 12,
     type: "mc",
-    question: "What is the value of the expression shown?",
+    question: "What is the value of 1/2 + 2/8 + 3/4?",
     options: ["6/14", "6/8", "2 1/2", "1 4/2"],
     answer: "2 1/2",
     explanation: "Follow the order of operations carefully: solve inside parentheses first, then multiply/divide, then add/subtract."
@@ -125,7 +125,7 @@ export const questions = [
   {
     id: 13,
     type: "mc",
-    question: "Cathy has 720 marbles and divides them among 16 friends. How many does each get?",
+    question: "Cathy found a box that contained 720 marbles. She divided the marbles evenly among her 16 friends. How many marbles did each friend receive?",
     options: ["45", "46", "47", "48"],
     answer: "45",
     explanation: "Divide 720 by 16 to find how many each person receives."
@@ -134,7 +134,7 @@ export const questions = [
   {
     id: 14,
     type: "mc",
-    question: "6 friends share 10 pounds of strawberries equally. How much does each get?",
+    question: "A group of 6 friends picked a total of 10 pounds of strawberries. The strawberries were divided equally among the friends. What amount strawberries did each friend get?",
     options: ["3/5", "1 1/16", "1 2/5", "1 2/3"],
     answer: "1 2/3",
     explanation: "Divide 10 by 6. This gives 10 ÷ 6 = 1 2/3 pounds per person."
@@ -143,7 +143,7 @@ export const questions = [
   {
     id: 15,
     type: "mc",
-    question: "How much larger is the fraction of leftover grape juice than apple juice? (See diagram)",
+    question: "The shaded parts of these diagrams show how much juice was left after a party. How much larger is the fraction of leftover grape juice than apple juice? (See diagram)",
     image: "/images/q15.png",
     options: ["1/12", "1/4", "4/15", "4/9"],
     answer: "1/4",
@@ -154,7 +154,7 @@ export const questions = [
 {
   id: 16,
   type: "input",
-  question: "What is the volume of this figure? (see diagram)",
+  question: "What is the volume of this figure in cubic inches? (see diagram)",
   image: "/images/q16.png",
   answer: "216",
   explanation: "Volume is the number of unit cubes in the figure. Count the cubes layer by layer, or multiply length × width × height if it forms a rectangular prism."
@@ -187,7 +187,7 @@ export const questions = [
 {
   id: 20,
   type: "input",
-  question: "An animal shelter uses 38 pounds of food per day. How much in 365 days?",
+  question: "An animal shelter uses 38 pounds of dog food per day. How many pounds of food will the shelter use in 365 days?",
   answer: "13870",
   explanation: "Multiply the daily amount by the number of days: 38 × 365 = 13,870."
 },
@@ -203,7 +203,7 @@ export const questions = [
 {
   id: 22,
   type: "input",
-  question: "A library receives 4,568 books in 4 weeks. How many per week?",
+  question: "A library receives 4,568 returned books in 4 weeks. It receives the same number of books each week. How many books does the library receive each week?",
   answer: "1142",
   explanation: "Divide the total books by the number of weeks: 4568 ÷ 4 = 1142."
 },
@@ -211,7 +211,7 @@ export const questions = [
 {
   id: 23,
   type: "input",
-  question: "A rectangle has length 10.42 m and width 7.67 m. What is the perimeter?",
+  question: "A rectangle has length 10.42 meters and width 7.67 meters. What is the perimeter, in meters?",
   answer: "36.18",
   explanation: "Perimeter = 2 × (length + width). Add first: 10.42 + 7.67 = 18.09, then multiply by 2."
 },
@@ -219,7 +219,7 @@ export const questions = [
 {
   id: 24,
   type: "input",
-  question: "Teresa gave 1/3 of 3/4 pound of fudge. How much did she give?",
+  question: "Teresa bought 3/4 of a pound of chocolate fudge. She gave 1/3 of that fudge to some friends. What fraction of a pound of the chocolate fudge did Teresa give to her friends?",
   answer: "1/4",
   explanation: "Multiply the fractions: 3/4 × 1/3 = 3/12. Simplify to 1/4."
 },
@@ -266,7 +266,7 @@ export const questions = [
 {
   id: 28,
   type: "mc",
-  question: "24 bottles cost $12 with a $0.48 discount. What is the price per bottle?",
+  question: "At a store, a package of 24 water bottles costs $12. The store is advertising a sale for $0.48 off the price of the package. What is the price of each bottle of water after $0.48 is taken off the price of the package?",
   options: ["$2.09", "$2.08", "$0.49", "$0.48"],
   answer: "$0.48",
   explanation: "First subtract the discount: 12 − 0.48 = 11.52. Then divide by 24 bottles."
@@ -275,7 +275,7 @@ export const questions = [
 {
   id: 29,
   type: "mc",
-  question: "A box has half the volume of another. Find the missing dimension.",
+  question: "Mr. Smith has two rectangular boxes. The first box is 20 inches long, 10 inches wide, and 12 inches tall. The second box has half the volume of the first box. The second box is 8 inches wide and 10 inches tall.",
   options: ["13", "14", "15", "16"],
   answer: "15",
   explanation: "Find the original volume, take half, then solve for the missing side using volume = length × width × height."
@@ -287,11 +287,11 @@ export const questions = [
   question: "What is the expanded form of 67.982?",
   options: [
     "6×10 + 7×1 + 9×0.10 + 8×0.01 + 2×0.001",
-    "Incorrect",
-    "Incorrect",
-    "Incorrect"
+    "6 × 10 + 7 × 1 + 9 × 0.001 + 8 × 0.01 + 2 × 0.10",
+    "67 × 10 + 9 × 0.001 + 8 × 0.01 + 2 × 0.10",
+    "67 × 10 + 9 × 0.10 + 8 × 0.01 + 2 × 0.001"
   ],
-  answer: "6×10 + 7×1 + 9×0.10 + 8×0.01 + 2×0.001",
+  answer: "6 × 10 + 7 × 1 + 9 × 0.001 + 8 × 0.01 + 2 × 0.10",
   explanation: "Break the number into place values: tens, ones, tenths, hundredths, and thousandths."
 },
 
@@ -379,7 +379,7 @@ export const questions = [
 {
   id: 39,
   type: "mc",
-  question: "9 students share 5 pounds. How much each?",
+  question: "9 students share 5 pounds of marbles. How many pounds of marbles will each student get?",
   options: ["1/45", "5/14", "5/9", "1 4/5"],
   answer: "5/9",
   explanation: "Divide 5 ÷ 9 to get 5/9 pounds each."
@@ -388,7 +388,7 @@ export const questions = [
 {
   id: 40,
   type: "mc",
-  question: "Who has more wire?",
+  question: "Luke has 4 feet and 7 inches of wire. Roger has 56 inches of wire. Who has more wire, and how much more?",
   options: [
     "Luke, 7 inches more",
     "Roger, 1 inch more",
