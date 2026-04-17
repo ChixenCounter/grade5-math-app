@@ -32,8 +32,6 @@ function App() {
   }, [started, finished, mode]);
 
   const handleAnswer = (answer) => {
-    if (finished) return;
-
     const updated = [...answers];
     updated[current] = answer;
     setAnswers(updated);
@@ -41,7 +39,7 @@ function App() {
     if (mode === "practice") {
       setShowFeedback(true);
     } else {
-      nextQuestion(updated);
+      nextQuestion();
     }
   };
 
@@ -77,7 +75,6 @@ function App() {
     return `${m}:${s.toString().padStart(2, "0")}`;
   };
 
-  // 🔥 Render math safely
   const renderMath = (text) => {
     if (!text) return "";
     return text.includes("\\frac") ? (
@@ -90,20 +87,26 @@ function App() {
   // MODE SELECT
   if (!mode) {
     return (
-      <div style={{ textAlign: "center", padding: 20 }}>
-        <h1>Grade 5 Math</h1>
-        <button onClick={() => setMode("test")}>Test Mode</button>
-        <button onClick={() => setMode("practice")} style={{ marginLeft: 10 }}>
-          Practice Mode
-        </button>
-      </div>
+      <CenteredCard>
+        <h1>Grade 5 Math Practice</h1>
+        <p style={{ color: "#666" }}>
+          Learn, practice, and improve step by step
+        </p>
+
+        <div style={{ marginTop: 20 }}>
+          <button onClick={() => setMode("test")}>Test Mode</button>
+          <button onClick={() => setMode("practice")} style={{ marginLeft: 10 }}>
+            Practice Mode
+          </button>
+        </div>
+      </CenteredCard>
     );
   }
 
   // START SCREEN
   if (!started) {
     return (
-      <div style={{ textAlign: "center", padding: 20 }}>
+      <CenteredCard>
         <h1>{mode === "test" ? "Test Mode" : "Practice Mode"}</h1>
 
         {mode === "test" && (
@@ -111,17 +114,19 @@ function App() {
         )}
 
         <button onClick={() => setStarted(true)}>Start</button>
-      </div>
+      </CenteredCard>
     );
   }
 
   if (finished) {
     return (
-      <Result
-        answers={answers}
-        questions={questions}
-        onRestart={handleRestart}
-      />
+      <CenteredCard>
+        <Result
+          answers={answers}
+          questions={questions}
+          onRestart={handleRestart}
+        />
+      </CenteredCard>
     );
   }
 
@@ -130,21 +135,34 @@ function App() {
   const isCorrect = userAnswer === currentQ.answer;
 
   return (
-    <div style={{ padding: 20, maxWidth: 900, margin: "0 auto" }}>
-      <h2>{mode === "test" ? "Test Mode" : "Practice Mode"}</h2>
+    <CenteredCard>
+      <h2 style={{ marginBottom: 5 }}>
+        {mode === "test" ? "Test Mode" : "Practice Mode"}
+      </h2>
 
-      {mode === "test" && <p>Time Left: {formatTime()}</p>}
+      {mode === "test" && (
+        <p style={{ color: "#666" }}>Time Left: {formatTime()}</p>
+      )}
 
-      <p>Question {current + 1} of {questions.length}</p>
+      <p style={{ marginBottom: 20 }}>
+        Question {current + 1} of {questions.length}
+      </p>
 
       {!showFeedback && (
         <Question data={currentQ} onAnswer={handleAnswer} />
       )}
 
-      {/* PRACTICE FEEDBACK */}
       {mode === "practice" && showFeedback && (
         <div>
-          <p>{isCorrect ? "Correct" : "Incorrect"}</p>
+          <p
+            style={{
+              fontWeight: "bold",
+              color: isCorrect ? "#2e7d32" : "#d32f2f",
+              fontSize: "18px"
+            }}
+          >
+            {isCorrect ? "✓ Correct!" : "✗ Try again"}
+          </p>
 
           {!isCorrect && (
             <p>Correct Answer: {renderMath(currentQ.answer)}</p>
@@ -160,11 +178,38 @@ function App() {
             </button>
           )}
 
-          <button onClick={nextQuestion}>
-            Next Question
-          </button>
+          <button onClick={nextQuestion}>Next Question</button>
         </div>
       )}
+    </CenteredCard>
+  );
+}
+
+// 🎨 Reusable layout wrapper
+function CenteredCard({ children }) {
+  return (
+    <div
+      style={{
+        minHeight: "100vh",
+        background: "#f5f7fb",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "20px"
+      }}
+    >
+      <div
+        style={{
+          width: "100%",
+          maxWidth: "700px",
+          background: "white",
+          padding: "25px",
+          borderRadius: "12px",
+          boxShadow: "0 8px 25px rgba(0,0,0,0.08)"
+        }}
+      >
+        {children}
+      </div>
     </div>
   );
 }
