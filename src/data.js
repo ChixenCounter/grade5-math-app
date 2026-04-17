@@ -12,8 +12,8 @@ export const questions = [
     id: 2,
     type: "mc",
     question: "Brandon has 2 3/12 feet of wood. Steve has 5 6/7 feet of wood. How many feet of wood do they have altogether?",
-    options: ["1 2/19", "3 4/19", "1 2/20", "3 4/20"],
-    answer: "1 2/20",
+    options: ["19 1/2", "19 3/4", "20 1/2", "20 3/4"],
+    answer: "20 1/2",
     explanation: "Add the whole numbers and fractions separately. You need a common denominator to add the fractions correctly, then combine everything."
   },
 
